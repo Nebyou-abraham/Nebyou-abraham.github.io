@@ -1,0 +1,363 @@
+/* my default settings */
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none; /* removes default outline */
+    font-family: "Cal Sans", sans-serif; /*chosen default font */
+}
+
+/* specifications for the font */
+.cal-sans-regular {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+/* main styles */
+main {
+    color:white;
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+    position: relative;
+    z-index: 50;
+
+}
+/* my custom font size settings */
+html {
+    font-size: 62.5%; /* desired size best fit for my screen */
+}
+/* Body styles */
+body {
+    width: 100%;
+    min-height: 100vh;  /* minimum height of body section */
+    background-color: black;
+    color:white;
+    overflow-x: hidden; /* stops horizontal scrolling for users */
+    padding-top: 100px; /* gives space for the header so overlapping is prevented */
+    padding-bottom:60px; /* gives space for the footer so overlapping is prevented */
+}
+/* Header styles */
+header {
+    margin-top: 20px;
+    position: fixed; /* used to make header stay in one place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between; /* space for logo and navigation bar so colliding is prevented */
+    align-self: center;
+    z-index: 100; /* gives space for the header to be above content */
+}
+/* Logo styles */
+.logo{
+    font-size: 3rem;
+    color: red;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;              /* wanted to incorporate some animation */
+}
+.logo:hover{
+    transform: scale(1.1);          /* when the logo is hovered on it will grow in scale */
+}
+/* Navigation links styles */
+nav {
+    display: flex; /* horizontal nav bar */
+    gap: 2rem; 
+}
+nav a {
+    display:block;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+nav a:hover,
+nav a:active {
+    color:red;
+    border-bottom-color: red; /* red underline */
+    transform: scale(1.05); /* grows when hovered over */
+    border-radius: 0.5rem; 
+
+}
+/* all customizations relating to the home div class */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    gap: 10rem; /* space between text and image */
+}
+/* specifically customizes the text in the home div */
+.home .home-content h1{
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    padding-top: 8rem;
+}
+span {
+    color: white;
+}
+.home-content h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+/* makes the profile image circular */
+.home-img {
+    border-radius: 50%; /* circlular shape */
+    overflow: hidden; /* fills gap for image */
+    width: 30rem; /* width of image */
+    height: 30rem; /* height of image */
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border: 0.5rem solid black;
+    cursor: pointer;
+}
+/* changes the dimensions of the image */
+.home-img img {
+    position: relative;
+    width: 30vw; /* width of image */
+    border-radius: 50%; /* circlular shape */
+    box-shadow: 0 0 25px solid white;
+    cursor: pointer;
+}
+/* social media styles */
+.social-icons {
+    margin-bottom: 30px;
+    padding-top: 2rem; /*space for icons */
+    display: flex;
+}
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%; /* circular shape */
+    color: white;
+    text-align: center;
+    line-height: 40px; /* center the icon with the hover effect */
+    font-size: 2rem;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+.social-icons a:hover {
+    background-color: red;
+    color: black;
+    transform: scale(1.3);
+    box-shadow: 0 0 25px red;
+}
+
+
+/* button styles */
+.contact {
+    display: inline-flex;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: 0.5rem solid red; /* boreder around the edges */
+} 
+.contact:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.03);
+    box-shadow: 0 0 25px red;
+}
+/* this is used for various different devices based on their screen size wanted this to be scalable */
+@media(max-width: 1000px){
+    .home {
+        gap: 4rem;
+    }
+}
+@media(max-width: 995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        margin-top: 4rem;
+    }
+}
+/* footer styles */
+footer {
+    position: fixed; /* fixes the postiion in one place */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    z-index: 100;
+}
+
+/* Article styles */
+article h3 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+article p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+}
+/*About me styles */
+.about-page {
+    background-color: black;
+    color: white;
+    padding-top: 8rem;
+}
+.about-page header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.about-page h3 {
+    font-size: 3rem;
+    color: red;
+    margin-bottom: 1.5rem;
+}
+.about-page p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.image-container img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15x rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+.image-container img:hover {
+    transform: scale(1.05);
+}
+/* resume styles */
+.resume {
+    padding-top: 8rem;
+    max-width: 800px;
+    margin: 0 auto; /* centers resume content */
+    position: relative;
+    z-index: 50;
+}
+.resume h2 {
+    font-size: 3rem;
+    color: red;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    border-bottom: 2px solid red;
+    padding-bottom: 0.5rem;
+}
+.resume ul {
+    margin: 0 0 1rem 2rem;
+    padding-left: 1rem;
+    text-align: left;
+}
+.resume li {
+    margin-bottom: 0.5rem;
+    list-style-position: outside; /* bullet points */
+}
+.resume p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+/* Hobbies styles */
+section table {
+    width: 80%;
+    margin: 0 auto; /* centers content */
+    border-collapse: collapse;
+    border-radius: 10px; 
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+section table thead {
+    background-color: red;
+    color: black;
+}
+section table th, table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: black;
+}
+section table tbody tr:hover {
+    background-color: #ddd;
+}
+section table img {
+    width:50px;
+    height: 50px;
+    border-radius: 8px;
+}
+section h3 {
+    font-size: 3rem;
+    color: red;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+/*Gallery styles */
+div.gallery {
+    border: 1px solid #ccc;
+
+}
+div.gallery:hover {
+    border: 1px solid red;
+}
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+div.caption {
+    padding: 15px;
+    text-align:center;
+}
+.frames {
+    padding: 0 5px;
+    float: left; /* makes the images float in a grid */
+    width: 25%;
+}
